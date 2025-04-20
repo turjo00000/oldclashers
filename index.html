@@ -41,6 +41,7 @@
     nav h1 {
       font-size: 1.8em;
       color: var(--accent-color);
+      white-space: nowrap;
     }
     nav ul {
       list-style: none;
@@ -63,20 +64,18 @@
       cursor: pointer;
     }
     header {
-      padding: 100px 20px;
+      padding: 100px 20px 40px;
       text-align: center;
       background: linear-gradient(to bottom, #111, #1a1a1a);
     }
     header h2 {
       font-size: 3em;
       color: var(--accent-color);
-      animation: fadeInDown 1s ease;
     }
     header p {
       font-size: 1.2em;
       margin-top: 10px;
       color: var(--secondary-color);
-      animation: fadeInUp 1s ease;
     }
     section {
       padding: 60px 20px;
@@ -84,18 +83,19 @@
       margin: auto;
     }
     h3 {
-      font-size: 2em;
+      font-size: 2.5em;
       margin-bottom: 20px;
       color: var(--accent-color);
-      text-shadow: 0 0 10px #00ffcc;
+      text-shadow: 2px 2px 4px #ffffff;
+      text-align: center;
     }
-    .team-member {
-      border: 2px solid #00ffcc;
-      border-radius: 15px;
+    .team-box {
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px solid #00ffcc;
       padding: 20px;
+      border-radius: 15px;
       margin-bottom: 20px;
-      background: rgba(0, 255, 204, 0.05);
-      box-shadow: 0 0 15px rgba(0,255,204,0.2);
+      box-shadow: 0 0 10px rgba(0,255,204,0.2);
     }
     a {
       color: var(--accent-color);
@@ -108,13 +108,8 @@
       color: #777;
       font-size: 0.9em;
     }
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    .contact-info {
+      margin-bottom: 10px;
     }
   </style>
 </head>
@@ -131,55 +126,75 @@
 
   <header>
     <h2>Welcome to</h2>
-    <p>OLD CLASHERS</p>
+    <p style="font-size: 2em; color: var(--accent-color);">OLD CLASHERS</p>
   </header>
 
   <section id="about">
     <h3>About Us</h3>
-    <p>We are <strong>OLD CLASHERS</strong>, a Free Fire esports team with elite members dedicated to strategy, teamwork, and domination in competitive scenes.</p>
+    <p><strong>OLD CLASHERS</strong> is a top-tier Free Fire esports team from Bangladesh, known for unmatched synergy, fast-paced tactics, and fearless execution in battle. Our team consists of elite players with unique specialties, working together to dominate every match. From close-combat assaults to precision sniping, we cover all bases.</p>
+    <br>
+    <p>Founded by passionate players, the team quickly rose in ranks through local and national tournaments. We aim to represent the South Asian esports community on global stages with pride and professionalism.</p>
   </section>
 
   <section id="team">
-    <h3>Meet the Squad</h3>
+    <h3>Our Players</h3>
 
-    <div class="team-member">
+    <div class="team-box">
       <strong>OLD OCEAN (Mridul Khan)</strong><br>
-      Role: Leader & Main Rusher<br>
-      Description: Known for fearless entry-fragging and smart callouts, he leads from the front.
+      <em>Leader / Main Rusher</em><br>
+      As the fearless team captain, OLD OCEAN leads the charge with calculated aggression. His ability to break enemy lines is unmatched.
     </div>
 
-    <div class="team-member">
+    <div class="team-box">
       <strong>OLD XENON (Muhammad Sajim)</strong><br>
-      Role: Second Rusher<br>
-      Description: Executes flank plays and pressure tactics to perfection.
+      <em>2nd Rusher / Flanker</em><br>
+      Master of sneak attacks, XENON creates diversions and executes clever flank moves that dismantle enemy strategies.
     </div>
 
-    <div class="team-member">
+    <div class="team-box">
       <strong>OLD SUHAIL (Suhail Ahmed Sami)</strong><br>
-      Role: Support & Utility<br>
-      Description: Master of cover fire, glue wall placement, and clutch support.
+      <em>Support / Utility</em><br>
+      Calm and composed, SUHAIL ensures survival and backup support in tough fights with his clutch healing and utility tactics.
     </div>
 
-    <div class="team-member">
+    <div class="team-box">
       <strong>OLD FALCON (Turjo Sarker)</strong><br>
-      Role: Sniper & Vision Controller<br>
-      Description: Provides long-range firepower and enemy intel.
+      <em>Sniper / Long-Range Support</em><br>
+      The team’s deadliest eye, FALCON picks enemies off from afar with pinpoint accuracy and provides crucial intel.
     </div>
   </section>
 
   <section id="contact" style="background: #0c0c0c; padding: 80px 20px;">
-    <h3 style="text-align: center; font-size: 2.5em; text-shadow: 2px 2px #00ffcc; margin-bottom: 40px;">CONTACT US</h3>
-    <form id="contact-form" style="max-width: 600px; margin: 0 auto; background: rgba(255, 255, 255, 0.05); padding: 40px; border-radius: 15px; box-shadow: 0 0 20px rgba(0,255,204,0.2);">
+    <h3 style="text-shadow: 2px 2px 6px #fff;">CONTACT US</h3>
+
+    <form id="contact-form" style="
+      max-width: 600px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,255,204,0.2);
+    ">
       <label style="color: #00ffcc; font-weight: 600;">Your name:</label>
-      <input type="text" name="name" required style="width: 100%; padding: 12px; margin: 10px 0 20px; border: none; border-bottom: 2px solid #00ffcc; background: transparent; color: #fff; font-size: 1em;">
+      <input type="text" name="name" required style="width: 100%; padding: 12px; margin: 10px 0 20px; border: none; border-bottom: 2px solid #00ffcc; background: transparent; color: #fff;">
+
       <label style="color: #00ffcc; font-weight: 600;">Your Email:</label>
-      <input type="email" name="email" required style="width: 100%; padding: 12px; margin: 10px 0 20px; border: none; border-bottom: 2px solid #00ffcc; background: transparent; color: #fff; font-size: 1em;">
+      <input type="email" name="email" required style="width: 100%; padding: 12px; margin: 10px 0 20px; border: none; border-bottom: 2px solid #00ffcc; background: transparent; color: #fff;">
+
       <label style="color: #00ffcc; font-weight: 600;">Subject:</label>
-      <input type="text" name="subject" style="width: 100%; padding: 12px; margin: 10px 0 20px; border: none; border-bottom: 2px solid #00ffcc; background: transparent; color: #fff; font-size: 1em;">
+      <input type="text" name="subject" style="width: 100%; padding: 12px; margin: 10px 0 20px; border: none; border-bottom: 2px solid #00ffcc; background: transparent; color: #fff;">
+
       <label style="color: #00ffcc; font-weight: 600;">Your message:</label>
-      <textarea name="message" rows="5" required style="width: 100%; padding: 12px; margin: 10px 0 30px; border: 2px solid #00ffcc; border-radius: 10px; background: transparent; color: #fff; font-size: 1em; resize: vertical;"></textarea>
+      <textarea name="message" rows="5" required style="width: 100%; padding: 12px; margin: 10px 0 30px; border: 2px solid #00ffcc; border-radius: 10px; background: transparent; color: #fff; resize: vertical;"></textarea>
+
       <button type="submit" id="send-btn" style="background: linear-gradient(135deg, #00ffcc, #00b894); border: none; padding: 12px 30px; color: #000; font-weight: bold; border-radius: 30px; cursor: pointer; font-size: 1.1em; transition: background 0.3s ease;">Send</button>
     </form>
+
+    <div class="contact-info" style="text-align:center; margin-top:40px;">
+      <p>Email: <a href="mailto:tsturjo57@gmail.com">tsturjo57@gmail.com</a></p>
+      <p>Instagram: <a href="https://www.instagram.com/old_falcon_24" target="_blank">@old_falcon_24</a></p>
+      <p>Facebook: <a href="https://www.facebook.com/turjo.sarker.988277" target="_blank">Turjo Sarker</a></p>
+    </div>
   </section>
 
   <footer>
@@ -197,6 +212,7 @@
 
     form.addEventListener("submit", function(event) {
       event.preventDefault();
+
       button.disabled = true;
       button.textContent = "Sending...";
 
