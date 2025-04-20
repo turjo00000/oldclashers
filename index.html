@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OLD CLASHERS | Free Fire Esports Team</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
@@ -13,12 +13,22 @@
       --accent-color: #00ffcc;
       --secondary-color: #aaa;
     }
+    .dark-mode {
+      --bg-color: #f4f4f4;
+      --text-color: #111;
+      --accent-color: #00b894;
+      --secondary-color: #555;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
     body {
       font-family: 'Poppins', sans-serif;
       background-color: var(--bg-color);
       color: var(--text-color);
-      margin: 0;
-      padding: 0;
+      transition: background-color 0.3s, color 0.3s;
     }
     nav {
       background: #111;
@@ -26,11 +36,11 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.6);
     }
     nav h1 {
       font-size: 1.8em;
       color: var(--accent-color);
-      white-space: nowrap;
     }
     nav ul {
       list-style: none;
@@ -40,13 +50,21 @@
     nav ul li a {
       color: var(--secondary-color);
       text-decoration: none;
+      transition: 0.3s;
     }
     nav ul li a:hover {
       color: var(--accent-color);
     }
+    .toggle-btn {
+      background: none;
+      border: none;
+      color: var(--accent-color);
+      font-size: 1.2em;
+      cursor: pointer;
+    }
     header {
-      text-align: center;
       padding: 100px 20px;
+      text-align: center;
       background: linear-gradient(to bottom, #111, #1a1a1a);
     }
     header h2 {
@@ -54,61 +72,75 @@
       color: var(--accent-color);
     }
     header p {
-      font-size: 1.5em;
-      color: var(--text-color);
+      font-size: 1.2em;
       margin-top: 10px;
+      color: var(--secondary-color);
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
     }
     h3 {
       font-size: 2em;
       margin-bottom: 20px;
       color: var(--accent-color);
-      text-shadow: 0 0 10px #00ffcc;
+      text-align: center;
     }
-    section {
-      padding: 60px 20px;
-      max-width: 900px;
-      margin: auto;
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
     }
-    .team-member {
-      margin-bottom: 25px;
+    .player-box {
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px solid #00ffcc;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 0 15px rgba(0, 255, 204, 0.2);
+      transition: transform 0.3s ease;
+      color: #fff;
     }
-    .team-member strong {
+    .player-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 25px rgba(0, 255, 204, 0.4);
+    }
+    .player-box strong {
+      font-size: 1.3em;
       color: #00ffcc;
-      text-shadow: 0 0 6px #00ffcc;
+      display: block;
+      margin-bottom: 10px;
     }
-
-    /* Contact Form */
-    #contact {
-      background: #0c0c0c;
+    .player-box em {
+      font-style: normal;
+      color: #aaa;
+      font-size: 0.95em;
+      margin-bottom: 10px;
+      display: block;
     }
     form {
+      max-width: 600px;
+      margin: 0 auto;
       background: rgba(255, 255, 255, 0.05);
       padding: 40px;
       border-radius: 15px;
       box-shadow: 0 0 20px rgba(0,255,204,0.2);
     }
-    form label {
-      color: #00ffcc;
-      font-weight: 600;
-      display: block;
-      margin-top: 20px;
-    }
-    input, textarea {
+    form input, form textarea {
       width: 100%;
       padding: 12px;
-      margin-top: 10px;
+      margin-bottom: 20px;
       background: transparent;
-      color: #fff;
       border: none;
       border-bottom: 2px solid #00ffcc;
+      color: #fff;
       font-size: 1em;
     }
-    textarea {
+    form textarea {
       border: 2px solid #00ffcc;
       border-radius: 10px;
     }
-    button {
-      margin-top: 20px;
+    form button {
       background: linear-gradient(135deg, #00ffcc, #00b894);
       border: none;
       padding: 12px 30px;
@@ -117,12 +149,14 @@
       border-radius: 30px;
       cursor: pointer;
       font-size: 1.1em;
+      transition: background 0.3s ease;
     }
     footer {
-      text-align: center;
       background: #111;
+      text-align: center;
       padding: 20px;
-      color: #aaa;
+      color: #777;
+      font-size: 0.9em;
     }
   </style>
 </head>
@@ -130,69 +164,61 @@
   <nav>
     <h1>OLD CLASHERS</h1>
     <ul>
-      <li><a href="#about">About</a></li>
       <li><a href="#team">Team</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+    <button class="toggle-btn" onclick="document.body.classList.toggle('dark-mode')"><i class="fas fa-adjust"></i></button>
   </nav>
 
   <header>
-    <h2>Welcome to</h2>
-    <p>OLD CLASHERS</p>
+    <h2>OLD CLASHERS</h2>
+    <p>Free Fire Esports Team | Powered by Passion & Precision</p>
   </header>
-
-  <section id="about">
-    <h3>About Our Team</h3>
-    <p><strong>OLD CLASHERS</strong> is a Free Fire esports team made up of four elite players known for precision, power, and coordination in every battle.</p>
-  </section>
 
   <section id="team">
     <h3>Meet The Squad</h3>
-    <div class="team-member">
-      <strong>OLD OCEAN (Mridul Khan)</strong><br>
-      Role: Main Rusher
-    </div>
-    <div class="team-member">
-      <strong>OLD XENON (Muhammad Sajim)</strong><br>
-      Role: Flank & Pressure
-    </div>
-    <div class="team-member">
-      <strong>OLD SUHAIL (Suhail Ahmed Sami)</strong><br>
-      Role: Support & Utility
-    </div>
-    <div class="team-member">
-      <strong>OLD FALCON (Turjo Sarker)</strong><br>
-      Role: Sniper & Intel
+    <div class="team-grid">
+      <div class="player-box">
+        <strong>OLD OCEAN (Mridul Khan)</strong>
+        <em>Main Rusher</em>
+        The fearless frontliner of the team, OLD OCEAN leads aggressive pushes with unmatched reflex and accuracy.
+      </div>
+      <div class="player-box">
+        <strong>OLD XENON (Muhammad Sajim)</strong>
+        <em>Flank & Pressure</em>
+        Known for unpredictable movements and flanks, OLD XENON disrupts enemy formations and dominates duels.
+      </div>
+      <div class="player-box">
+        <strong>OLD SUHAIL (Suhail Ahmed Sami)</strong>
+        <em>Support & Utility</em>
+        The brain of the team. OLD SUHAIL provides tactical support and ensures survival under pressure.
+      </div>
+      <div class="player-box">
+        <strong>OLD FALCON (Turjo Sarker)</strong>
+        <em>Sniper & Intel</em>
+        As the sharpshooter, OLD FALCON controls the battlefield with precision snipes and critical enemy info.
+      </div>
     </div>
   </section>
 
   <section id="contact">
-    <h3 style="text-align: center;">CONTACT US</h3>
+    <h3>Contact Us</h3>
     <form id="contact-form">
-      <label>Your name:</label>
-      <input type="text" name="name" required placeholder="Enter your name" />
-
-      <label>Your email:</label>
-      <input type="email" name="email" required placeholder="Enter your email" />
-
-      <label>Subject:</label>
-      <input type="text" name="subject" placeholder="Subject" />
-
-      <label>Your message:</label>
-      <textarea name="message" rows="5" required placeholder="Type your message here..."></textarea>
-
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="text" name="subject" placeholder="Subject">
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
       <button type="submit" id="send-btn">Send</button>
     </form>
   </section>
 
   <footer>
-    &copy; 2025 OLD CLASHERS | All Rights Reserved.
+    &copy; 2025 OLD CLASHERS | All rights reserved.
   </footer>
 
-  <!-- EmailJS Script -->
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script>
-    (function(){
+    (function() {
       emailjs.init("VYKK057zR_OaMB7bb");
     })();
 
@@ -201,6 +227,7 @@
 
     form.addEventListener("submit", function(event) {
       event.preventDefault();
+
       button.disabled = true;
       button.textContent = "Sending...";
 
