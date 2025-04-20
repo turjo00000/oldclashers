@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>OLD CLASHERS | Free Fire Esports Team</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OLD CLASHERS | Esports Team</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
   <style>
@@ -13,12 +13,22 @@
       --accent-color: #00ffcc;
       --secondary-color: #aaa;
     }
+    .dark-mode {
+      --bg-color: #f4f4f4;
+      --text-color: #111;
+      --accent-color: #00b894;
+      --secondary-color: #555;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
     body {
       font-family: 'Poppins', sans-serif;
       background-color: var(--bg-color);
       color: var(--text-color);
-      margin: 0;
-      padding: 0;
+      transition: background-color 0.3s, color 0.3s;
     }
     nav {
       background: #111;
@@ -26,6 +36,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.6);
     }
     nav h1 {
       font-size: 1.8em;
@@ -40,13 +51,21 @@
     nav ul li a {
       color: var(--secondary-color);
       text-decoration: none;
+      transition: 0.3s;
     }
     nav ul li a:hover {
       color: var(--accent-color);
     }
+    .toggle-btn {
+      background: none;
+      border: none;
+      color: var(--accent-color);
+      font-size: 1.2em;
+      cursor: pointer;
+    }
     header {
+      padding: 100px 20px 40px;
       text-align: center;
-      padding: 100px 20px;
       background: linear-gradient(to bottom, #111, #1a1a1a);
     }
     header h2 {
@@ -54,75 +73,43 @@
       color: var(--accent-color);
     }
     header p {
-      font-size: 1.5em;
-      color: var(--text-color);
+      font-size: 1.2em;
       margin-top: 10px;
-    }
-    h3 {
-      font-size: 2em;
-      margin-bottom: 20px;
-      color: var(--accent-color);
-      text-shadow: 0 0 10px #00ffcc;
+      color: var(--secondary-color);
     }
     section {
       padding: 60px 20px;
-      max-width: 900px;
+      max-width: 1000px;
       margin: auto;
     }
-    .team-member {
-      margin-bottom: 25px;
+    h3 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      color: var(--accent-color);
+      text-shadow: 2px 2px 4px #ffffff;
+      text-align: center;
     }
-    .team-member strong {
-      color: #00ffcc;
-      text-shadow: 0 0 6px #00ffcc;
-    }
-
-    /* Contact Form */
-    #contact {
-      background: #0c0c0c;
-    }
-    form {
-      background: rgba(255, 255, 255, 0.05);
-      padding: 40px;
+    .team-box {
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px solid #00ffcc;
+      padding: 20px;
       border-radius: 15px;
-      box-shadow: 0 0 20px rgba(0,255,204,0.2);
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px rgba(0,255,204,0.2);
     }
-    form label {
-      color: #00ffcc;
-      font-weight: 600;
-      display: block;
-      margin-top: 20px;
-    }
-    input, textarea {
-      width: 100%;
-      padding: 12px;
-      margin-top: 10px;
-      background: transparent;
-      color: #fff;
-      border: none;
-      border-bottom: 2px solid #00ffcc;
-      font-size: 1em;
-    }
-    textarea {
-      border: 2px solid #00ffcc;
-      border-radius: 10px;
-    }
-    button {
-      margin-top: 20px;
-      background: linear-gradient(135deg, #00ffcc, #00b894);
-      border: none;
-      padding: 12px 30px;
-      color: #000;
-      font-weight: bold;
-      border-radius: 30px;
-      cursor: pointer;
-      font-size: 1.1em;
+    a {
+      color: var(--accent-color);
+      text-decoration: none;
     }
     footer {
-      text-align: center;
       background: #111;
+      text-align: center;
       padding: 20px;
-      color: #aaa;
+      color: #777;
+      font-size: 0.9em;
+    }
+    .contact-info {
+      margin-bottom: 10px;
     }
   </style>
 </head>
@@ -134,62 +121,86 @@
       <li><a href="#team">Team</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+    <button class="toggle-btn" onclick="toggleDarkMode()"><i class="fas fa-adjust"></i></button>
   </nav>
 
   <header>
     <h2>Welcome to</h2>
-    <p>OLD CLASHERS</p>
+    <p style="font-size: 2em; color: var(--accent-color);">OLD CLASHERS</p>
   </header>
 
   <section id="about">
-    <h3>About Our Team</h3>
-    <p><strong>OLD CLASHERS</strong> is a Free Fire esports team made up of four elite players known for precision, power, and coordination in every battle.</p>
+    <h3>About Us</h3>
+    <p><strong>OLD CLASHERS</strong> is a top-tier Free Fire esports team from Bangladesh, known for unmatched synergy, fast-paced tactics, and fearless execution in battle. Our team consists of elite players with unique specialties, working together to dominate every match. From close-combat assaults to precision sniping, we cover all bases.</p>
+    <br>
+    <p>Founded by passionate players, the team quickly rose in ranks through local and national tournaments. We aim to represent the South Asian esports community on global stages with pride and professionalism.</p>
   </section>
 
   <section id="team">
-    <h3>Meet The Squad</h3>
-    <div class="team-member">
+    <h3>Our Players</h3>
+
+    <div class="team-box">
       <strong>OLD OCEAN (Mridul Khan)</strong><br>
-      Role: Main Rusher
+      <em>Leader / Main Rusher</em><br>
+      As the fearless team captain, OLD OCEAN leads the charge with calculated aggression. His ability to break enemy lines is unmatched.
     </div>
-    <div class="team-member">
+
+    <div class="team-box">
       <strong>OLD XENON (Muhammad Sajim)</strong><br>
-      Role: Flank & Pressure
+      <em>2nd Rusher / Flanker</em><br>
+      Master of sneak attacks, XENON creates diversions and executes clever flank moves that dismantle enemy strategies.
     </div>
-    <div class="team-member">
+
+    <div class="team-box">
       <strong>OLD SUHAIL (Suhail Ahmed Sami)</strong><br>
-      Role: Support & Utility
+      <em>Support / Utility</em><br>
+      Calm and composed, SUHAIL ensures survival and backup support in tough fights with his clutch healing and utility tactics.
     </div>
-    <div class="team-member">
+
+    <div class="team-box">
       <strong>OLD FALCON (Turjo Sarker)</strong><br>
-      Role: Sniper & Intel
+      <em>Sniper / Long-Range Support</em><br>
+      The team’s deadliest eye, FALCON picks enemies off from afar with pinpoint accuracy and provides crucial intel.
     </div>
   </section>
 
-  <section id="contact">
-    <h3 style="text-align: center;">CONTACT US</h3>
-    <form id="contact-form">
-      <label>Your name:</label>
-      <input type="text" name="name" required placeholder="Enter your name" />
+  <section id="contact" style="background: #0c0c0c; padding: 80px 20px;">
+    <h3 style="text-shadow: 2px 2px 6px #fff;">CONTACT US</h3>
 
-      <label>Your email:</label>
-      <input type="email" name="email" required placeholder="Enter your email" />
+    <form id="contact-form" style="
+      max-width: 600px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,255,204,0.2);
+    ">
+      <label style="color: #00ffcc; font-weight: 600;">Your name:</label>
+      <input type="text" name="name" required style="width: 100%; padding: 12px; margin: 10px 0 20px; border: none; border-bottom: 2px solid #00ffcc; background: transparent; color: #fff;">
 
-      <label>Subject:</label>
-      <input type="text" name="subject" placeholder="Subject" />
+      <label style="color: #00ffcc; font-weight: 600;">Your Email:</label>
+      <input type="email" name="email" required style="width: 100%; padding: 12px; margin: 10px 0 20px; border: none; border-bottom: 2px solid #00ffcc; background: transparent; color: #fff;">
 
-      <label>Your message:</label>
-      <textarea name="message" rows="5" required placeholder="Type your message here..."></textarea>
+      <label style="color: #00ffcc; font-weight: 600;">Subject:</label>
+      <input type="text" name="subject" style="width: 100%; padding: 12px; margin: 10px 0 20px; border: none; border-bottom: 2px solid #00ffcc; background: transparent; color: #fff;">
 
-      <button type="submit" id="send-btn">Send</button>
+      <label style="color: #00ffcc; font-weight: 600;">Your message:</label>
+      <textarea name="message" rows="5" required style="width: 100%; padding: 12px; margin: 10px 0 30px; border: 2px solid #00ffcc; border-radius: 10px; background: transparent; color: #fff; resize: vertical;"></textarea>
+
+      <button type="submit" id="send-btn" style="background: linear-gradient(135deg, #00ffcc, #00b894); border: none; padding: 12px 30px; color: #000; font-weight: bold; border-radius: 30px; cursor: pointer; font-size: 1.1em; transition: background 0.3s ease;">Send</button>
     </form>
+
+    <div class="contact-info" style="text-align:center; margin-top:40px;">
+      <p>Email: <a href="mailto:tsturjo57@gmail.com">tsturjo57@gmail.com</a></p>
+      <p>Instagram: <a href="https://www.instagram.com/old_falcon_24" target="_blank">@old_falcon_24</a></p>
+      <p>Facebook: <a href="https://www.facebook.com/turjo.sarker.988277" target="_blank">Turjo Sarker</a></p>
+    </div>
   </section>
 
   <footer>
-    &copy; 2025 OLD CLASHERS | All Rights Reserved.
+    &copy; 2025 OLD CLASHERS | All rights reserved.
   </footer>
 
-  <!-- EmailJS Script -->
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script>
     (function(){
@@ -201,6 +212,7 @@
 
     form.addEventListener("submit", function(event) {
       event.preventDefault();
+
       button.disabled = true;
       button.textContent = "Sending...";
 
@@ -220,6 +232,10 @@
           }, 3000);
         });
     });
+
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
   </script>
 </body>
 </html>
