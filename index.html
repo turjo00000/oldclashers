@@ -75,6 +75,13 @@
       padding: 60px 20px;
       max-width: 1200px;
       margin: 0 auto;
+      opacity: 0;
+      transform: translateX(-100%);
+      transition: all 0.5s ease;
+    }
+    section.active {
+      opacity: 1;
+      transform: translateX(0);
     }
     h3 {
       font-size: 2.5em;
@@ -189,8 +196,8 @@
     .contact-form button:hover {
       background-color: #019c77;
     }
-    /* Floating icon for opening the contact form */
-    .open-contact-form {
+    /* Floating icon for opening sections */
+    .open-sections {
       position: fixed;
       top: 20px;
       right: 20px;
@@ -204,37 +211,10 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
       transition: transform 0.3s ease;
     }
-    .open-contact-form:hover {
+    .open-sections:hover {
       transform: scale(1.1);
     }
-    .contact-form-section {
-      display: none;
-      position: fixed;
-      top: 0;
-      right: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.8);
-      z-index: 9999;
-      align-items: center;
-      justify-content: center;
-    }
-    .contact-form-section.active {
-      display: flex;
-    }
-    .contact-form-section .contact-form {
-      background-color: rgba(255, 255, 255, 0.1);
-      padding: 40px;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-      width: 80%;
-      max-width: 600px;
-    }
 
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
   </style>
 </head>
 <body>
@@ -256,21 +236,38 @@
     <p>Elite Free Fire Esports Team</p>
   </header>
 
-  <!-- Open Contact Form Button -->
-  <button class="open-contact-form">
-    <i class="fas fa-comment-dots"></i>
+  <!-- Open Sections Button -->
+  <button class="open-sections">
+    <i class="fas fa-bars"></i>
   </button>
 
-  <!-- Hidden Contact Form Section -->
-  <div class="contact-form-section" id="contact-form-section">
-    <form class="contact-form" id="contact-form">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <input type="text" name="subject" placeholder="Subject" required>
-      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </div>
+  <!-- Sections -->
+  <section id="about">
+    <h3>About Us</h3>
+    <p>We are OLD CLASHERS, a top-tier Free Fire esports team competing globally!</p>
+  </section>
+
+  <section id="team">
+    <h3>Meet the Team</h3>
+    <div class="team-member">
+      <h4>OLD FALCON (Turjo Sarker)</h4>
+      <p>Team Captain and strategist.</p>
+    </div>
+    <div class="team-member">
+      <h4>OLD OCEAN (Mridul Khan)</h4>
+      <p>Shotgun specialist and clutch player.</p>
+    </div>
+  </section>
+
+  <section id="achievements">
+    <h3>Achievements</h3>
+    <p>We've won numerous tournaments across the region!</p>
+  </section>
+
+  <section id="services">
+    <h3>Services</h3>
+    <p>We offer coaching, scrims, and tournament hosting services.</p>
+  </section>
 
   <footer>
     <p>&copy; 2025 OLD CLASHERS | All Rights Reserved</p>
@@ -281,26 +278,15 @@
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script>
-    emailjs.init("VYKK057zR_OaMB7bb");
-    const form = document.getElementById("contact-form");
-    form.addEventListener("submit", function(event) {
-      event.preventDefault();
-      emailjs.sendForm('service_0dtr9qv', 'template_srmhwvt', form).then(function() {
-        alert("Message Sent Successfully!");
-        form.reset();
-      }, function(error) {
-        alert("Failed to send message. Please try again.");
+    // JavaScript to toggle section visibility and animate the slide-in effect
+    const openSectionsBtn = document.querySelector(".open-sections");
+    const sections = document.querySelectorAll("section");
+
+    openSectionsBtn.addEventListener("click", function() {
+      sections.forEach(section => {
+        section.classList.toggle("active");
       });
-    });
-
-    // Toggle contact form visibility
-    const openContactFormBtn = document.querySelector(".open-contact-form");
-    const contactFormSection = document.getElementById("contact-form-section");
-
-    openContactFormBtn.addEventListener("click", function() {
-      contactFormSection.classList.toggle("active");
     });
   </script>
 </body>
