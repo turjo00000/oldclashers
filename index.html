@@ -71,9 +71,6 @@
     nav ul li a:hover {
       color: var(--accent-color);
     }
-    nav ul li a.active {
-      color: var(--accent-color);
-    }
     section {
       padding: 60px 20px;
       max-width: 1200px;
@@ -192,6 +189,48 @@
     .contact-form button:hover {
       background-color: #019c77;
     }
+    /* Floating icon for opening the contact form */
+    .open-contact-form {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: var(--accent-color);
+      color: #fff;
+      font-size: 2em;
+      border: none;
+      padding: 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease;
+    }
+    .open-contact-form:hover {
+      transform: scale(1.1);
+    }
+    .contact-form-section {
+      display: none;
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+    }
+    .contact-form-section.active {
+      display: flex;
+    }
+    .contact-form-section .contact-form {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      width: 80%;
+      max-width: 600px;
+    }
+
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
@@ -217,72 +256,13 @@
     <p>Elite Free Fire Esports Team</p>
   </header>
 
-  <section id="about">
-    <h3>About Us</h3>
-    <p>OLD CLASHERS is a highly competitive Free Fire esports team known for its tactical gameplay and strategic dominance. With experienced players and a commitment to excellence, we strive to make an impact on every tournament we enter.</p>
-  </section>
+  <!-- Open Contact Form Button -->
+  <button class="open-contact-form">
+    <i class="fas fa-comment-dots"></i>
+  </button>
 
-  <section id="team">
-    <h3>Meet the Team</h3>
-    <div class="team-member">
-      <h4>OLD OCEAN (Mridul Khan)</h4>
-      <p>Role: Main Rusher - Our fearless leader, taking the initiative in every battle with unmatched aggression and strategy.</p>
-    </div>
-    <div class="team-member">
-      <h4>OLD XENON (Muhammad Sajim)</h4>
-      <p>Role: Flanker - Unpredictable and dynamic, Sajim is known for his ability to outmaneuver opponents and create opportunities for the team.</p>
-    </div>
-    <div class="team-member">
-      <h4>OLD SUHAIL (Suhail Ahmed Sami)</h4>
-      <p>Role: Support - Provides crucial support to the team, using utility items and offering defensive strategies to keep the team ahead.</p>
-    </div>
-    <div class="team-member">
-      <h4>OLD FALCON (Turjo Sarker)</h4>
-      <p>Role: Sniper - A master marksman, known for taking out key targets from a distance with precision and ease.</p>
-    </div>
-  </section>
-
-  <section id="achievements">
-    <h3>Our Achievements</h3>
-    <ul>
-      <li>1st Place in National Free Fire Championship 2024</li>
-      <li>Top 3 in Global Free Fire Series 2023</li>
-      <li>Multiple Regional MVP Titles</li>
-    </ul>
-  </section>
-
-  <section id="services">
-    <h3>Our Services</h3>
-    <ul>
-      <li><strong>Coaching & Mentoring:</strong> Personalized one-on-one coaching to improve gameplay.</li>
-      <li><strong>Event Hosting:</strong> Organize tournaments, online events, and esports shows.</li>
-      <li><strong>Streaming:</strong> Live streams on platforms like Twitch and YouTube.</li>
-    </ul>
-  </section>
-
-  <section id="testimonials">
-    <h3>What People Are Saying</h3>
-    <blockquote>
-      "OLD CLASHERS is one of the most disciplined teams I've ever worked with. Their strategic approach to Free Fire is second to none."
-      <footer>- John Doe, Esports Coach</footer>
-    </blockquote>
-    <blockquote>
-      "Every time I watch them play, I learn something new. The level of coordination they have is incredible."
-      <footer>- Alex Smith, Fan</footer>
-    </blockquote>
-  </section>
-
-  <section id="blog">
-    <h3>Latest Articles</h3>
-    <ul>
-      <li><a href="#">Understanding Free Fire: A New Era of Mobile Esports</a></li>
-      <li><a href="#">Top Strategies for Winning in Competitive Free Fire</a></li>
-      <li><a href="#">The Journey of OLD CLASHERS: From Dream to Reality</a></li>
-    </ul>
-  </section>
-
-  <section id="contact">
-    <h3>Contact Us</h3>
+  <!-- Hidden Contact Form Section -->
+  <div class="contact-form-section" id="contact-form-section">
     <form class="contact-form" id="contact-form">
       <input type="text" name="name" placeholder="Your Name" required>
       <input type="email" name="email" placeholder="Your Email" required>
@@ -290,7 +270,7 @@
       <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
       <button type="submit">Send Message</button>
     </form>
-  </section>
+  </div>
 
   <footer>
     <p>&copy; 2025 OLD CLASHERS | All Rights Reserved</p>
@@ -313,6 +293,14 @@
       }, function(error) {
         alert("Failed to send message. Please try again.");
       });
+    });
+
+    // Toggle contact form visibility
+    const openContactFormBtn = document.querySelector(".open-contact-form");
+    const contactFormSection = document.getElementById("contact-form-section");
+
+    openContactFormBtn.addEventListener("click", function() {
+      contactFormSection.classList.toggle("active");
     });
   </script>
 </body>
