@@ -28,10 +28,6 @@
       text-align: center;
       background: linear-gradient(to bottom, rgba(28, 28, 28, 0.8), rgba(28, 28, 28, 0.8)), url('https://via.placeholder.com/1900x800') no-repeat center center/cover;
       color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
     }
     header h1 {
       font-size: 3.5em;
@@ -40,13 +36,6 @@
       letter-spacing: 2px;
       margin-bottom: 10px;
       animation: fadeInUp 1s ease;
-    }
-    header .subheading {
-      font-size: 2.2em;
-      font-weight: 500;
-      margin-top: 15px;
-      color: var(--secondary-color);
-      animation: fadeInUp 1.5s ease;
     }
     header p {
       font-size: 1.4em;
@@ -97,7 +86,6 @@
       text-transform: uppercase;
       color: var(--accent-color);
       text-align: center;
-      text-shadow: 0 0 5px rgba(0, 255, 204, 0.5), 0 0 10px rgba(0, 255, 204, 0.5), 0 0 15px rgba(0, 255, 204, 0.5);
     }
     .team-member {
       background-color: rgba(255, 255, 255, 0.05);
@@ -106,7 +94,6 @@
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
       transition: transform 0.3s ease;
-      text-shadow: 0 0 5px rgba(0, 255, 204, 0.5), 0 0 10px rgba(0, 255, 204, 0.5), 0 0 15px rgba(0, 255, 204, 0.5);
     }
     .team-member:hover {
       transform: translateY(-10px);
@@ -125,7 +112,6 @@
       padding: 30px;
       margin-top: 50px;
       border-radius: 8px;
-      text-shadow: 0 0 5px rgba(0, 255, 204, 0.5), 0 0 10px rgba(0, 255, 204, 0.5), 0 0 15px rgba(0, 255, 204, 0.5);
     }
     .contact-info h4 {
       font-size: 1.8em;
@@ -206,11 +192,6 @@
     .contact-form button:hover {
       background-color: #019c77;
     }
-    /* Glowing effect for green text */
-    .glow-text {
-      color: var(--accent-color);
-      text-shadow: 0 0 5px rgba(0, 255, 204, 0.5), 0 0 10px rgba(0, 255, 204, 0.5), 0 0 15px rgba(0, 255, 204, 0.5);
-    }
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
@@ -229,8 +210,7 @@
   </nav>
 
   <header>
-    <h1>Welcome to</h1>
-    <h2 class="subheading">OLD CLASHERS</h2>
+    <h1>Welcome to OLD CLASHERS</h1>
     <p>Elite Free Fire Esports Team</p>
   </header>
 
@@ -242,58 +222,86 @@
   <section id="team">
     <h3>Meet the Team</h3>
     <div class="team-member">
-      <h4 class="glow-text">OLD OCEAN (Mridul Khan)</h4>
-      <p class="glow-text">Role: Main Rusher - Our fearless leader, taking the initiative in every battle with unmatched aggression and strategy.</p>
+      <h4>OLD OCEAN (Mridul Khan)</h4>
+      <p>Role: Main Rusher - Our fearless leader, taking the initiative in every battle with unmatched aggression and strategy.</p>
     </div>
     <div class="team-member">
-      <h4 class="glow-text">OLD XENON (Muhammad Sajim)</h4>
-      <p class="glow-text">Role: Flanker - Unpredictable and dynamic, Sajim is known for his ability to outmaneuver opponents and create opportunities for the team.</p>
+      <h4>OLD XENON (Muhammad Sajim)</h4>
+      <p>Role: Flanker - Unpredictable and dynamic, Sajim is known for his ability to outmaneuver opponents and create opportunities for the team.</p>
     </div>
     <div class="team-member">
-      <h4 class="glow-text">OLD SUHAIL (Suhail Ahmed Sami)</h4>
-      <p class="glow-text">Role: Support - Provides crucial support to the team, using utility items and offering defensive strategies to keep the team ahead.</p>
+      <h4>OLD SUHAIL (Suhail Ahmed Sami)</h4>
+      <p>Role: Support - Provides crucial support to the team, using utility items and offering defensive strategies to keep the team ahead.</p>
     </div>
     <div class="team-member">
-      <h4 class="glow-text">OLD FALCON (Turjo Sarker)</h4>
-      <p class="glow-text">Role: Sniper - A master marksman, known for taking out key targets from a distance with precision and ease.</p>
+      <h4>OLD FALCON (Turjo Sarker)</h4>
+      <p>Role: Sniper - A master marksman, known for taking out key targets from a distance with precision and ease.</p>
     </div>
   </section>
 
   <section id="achievements">
     <h3>Our Achievements</h3>
     <ul>
-      <li class="glow-text">1st Place in National Free Fire Championship 2024</li>
-      <li class="glow-text">Top 3 in Global Free Fire Series 2023</li>
-      <li class="glow-text">Multiple Regional MVP Titles</li>
+      <li>1st Place in National Free Fire Championship 2024</li>
+      <li>Top 3 in Global Free Fire Series 2023</li>
+      <li>Multiple Regional MVP Titles</li>
     </ul>
   </section>
 
-  <section id="contact">
-    <h3>Contact Us</h3>
-    <div class="contact-info">
-      <h4 class="glow-text">Email:</h4>
-      <p class="glow-text">contact@oldclashers.com</p>
-      <h4 class="glow-text">Phone:</h4>
-      <p class="glow-text">+123 456 7890</p>
-      <h4 class="glow-text">Follow Us:</h4>
-      <div class="social-icons">
-        <a href="#" class="glow-text"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="glow-text"><i class="fab fa-twitter"></i></a>
-        <a href="#" class="glow-text"><i class="fab fa-instagram"></i></a>
-        <a href="#" class="glow-text"><i class="fab fa-youtube"></i></a>
-      </div>
-    </div>
-    <form class="contact-form">
-      <h4 class="glow-text">Get In Touch</h4>
-      <input type="text" placeholder="Your Name" class="glow-text">
-      <input type="email" placeholder="Your Email" class="glow-text">
-      <textarea placeholder="Your Message" class="glow-text"></textarea>
-      <button type="submit">Send Message</button>
+  <section id="services">
+    <h3>Our Services</h3>
+    <ul>
+      <li><strong>Coaching & Mentoring:</strong> Personalized one-on-one coaching to improve gameplay.</li>
+      <li><strong>Event Hosting:</strong> Organize tournaments, online events, and esports shows.</li>
+      <li><strong>Streaming:</strong> Live streams on platforms like Twitch and YouTube.</li>
+    </ul>
+  </section>
+
+  
+  </section
+    
+  <section id="contact" style="background: #0c0c0c; padding: 80px 20px;">
+    <h3 style="text-align: center; color: #fff; font-size: 2.5em; text-shadow: 2px 2px #00ffcc; margin-bottom: 40px;">CONTACT US</h3>
+
+    <form id="contact-form" style="max-width: 600px; margin: 0 auto; background: rgba(255, 255, 255, 0.05); padding: 40px; border-radius: 15px; box-shadow: 0 0 20px rgba(0,255,204,0.2);">
+      <label style="color: #00ffcc; font-weight: 600;">Your name:</label>
+      <input type="text" name="name" placeholder="Enter your name" required style="width: 100%; padding: 12px; margin: 10px 0 20px; border: none; border-bottom: 2px solid #00ffcc; background: transparent; color: #fff; font-size: 1em;">
+
+      <label style="color: #00ffcc; font-weight: 600;">Your Email:</label>
+      <input type="email" name="email" placeholder="Enter your email" required style="width: 100%; padding: 12px; margin: 10px 0 20px; border: none; border-bottom: 2px solid #00ffcc; background: transparent; color: #fff; font-size: 1em;">
+
+      <label style="color: #00ffcc; font-weight: 600;">Subject:</label>
+      <input type="text" name="subject" placeholder="Subject" style="width: 100%; padding: 12px; margin: 10px 0 20px; border: none; border-bottom: 2px solid #00ffcc; background: transparent; color: #fff; font-size: 1em;">
+
+      <label style="color: #00ffcc; font-weight: 600;">Your message:</label>
+      <textarea name="message" placeholder="Type your message here..." rows="5" required style="width: 100%; padding: 12px; margin: 10px 0 30px; border: 2px solid #00ffcc; border-radius: 10px; background: transparent; color: #fff; font-size: 1em; resize: vertical;"></textarea>
+
+      <button type="submit" id="send-btn" style="background: linear-gradient(135deg, #00ffcc, #00b894); border: none; padding: 12px 30px; color: #000; font-weight: bold; border-radius: 30px; cursor: pointer; font-size: 1.1em; transition: background 0.3s ease;">Send</button>
     </form>
   </section>
 
   <footer>
-    <p>&copy; 2025 OLD CLASHERS Esports. All Rights Reserved.</p>
+    <p>&copy; 2025 OLD CLASHERS | All Rights Reserved</p>
+    <div class="social-icons">
+      <a href="#" class="fab fa-facebook"></a>
+      <a href="#" class="fab fa-twitter"></a>
+      <a href="#" class="fab fa-instagram"></a>
+    </div>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    emailjs.init("VYKK057zR_OaMB7bb");
+    const form = document.getElementById("contact-form");
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+      emailjs.sendForm('service_0dtr9qv', 'template_srmhwvt', form).then(function() {
+        alert("Message Sent Successfully!");
+        form.reset();
+      }, function(error) {
+        alert("Failed to send message. Please try again.");
+      });
+    });
+  </script>
 </body>
 </html>
