@@ -28,6 +28,10 @@
       text-align: center;
       background: linear-gradient(to bottom, rgba(28, 28, 28, 0.8), rgba(28, 28, 28, 0.8)), url('https://via.placeholder.com/1900x800') no-repeat center center/cover;
       color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
     header h1 {
       font-size: 3.5em;
@@ -36,6 +40,13 @@
       letter-spacing: 2px;
       margin-bottom: 10px;
       animation: fadeInUp 1s ease;
+    }
+    header .subheading {
+      font-size: 2.2em;
+      font-weight: 500;
+      margin-top: 15px;
+      color: var(--secondary-color);
+      animation: fadeInUp 1.5s ease;
     }
     header p {
       font-size: 1.4em;
@@ -86,6 +97,7 @@
       text-transform: uppercase;
       color: var(--accent-color);
       text-align: center;
+      text-shadow: 0 0 5px rgba(0, 255, 204, 0.5), 0 0 10px rgba(0, 255, 204, 0.5), 0 0 15px rgba(0, 255, 204, 0.5);
     }
     .team-member {
       background-color: rgba(255, 255, 255, 0.05);
@@ -94,6 +106,7 @@
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
       transition: transform 0.3s ease;
+      text-shadow: 0 0 5px rgba(0, 255, 204, 0.5), 0 0 10px rgba(0, 255, 204, 0.5), 0 0 15px rgba(0, 255, 204, 0.5);
     }
     .team-member:hover {
       transform: translateY(-10px);
@@ -112,6 +125,7 @@
       padding: 30px;
       margin-top: 50px;
       border-radius: 8px;
+      text-shadow: 0 0 5px rgba(0, 255, 204, 0.5), 0 0 10px rgba(0, 255, 204, 0.5), 0 0 15px rgba(0, 255, 204, 0.5);
     }
     .contact-info h4 {
       font-size: 1.8em;
@@ -210,7 +224,8 @@
   </nav>
 
   <header>
-    <h1>Welcome to OLD CLASHERS</h1>
+    <h1>Welcome to</h1>
+    <h2 class="subheading">OLD CLASHERS</h2>
     <p>Elite Free Fire Esports Team</p>
   </header>
 
@@ -258,50 +273,24 @@
   </section>
 
   <section id="testimonials">
-  
-    
-  <section id="contact" style="background: #0c0c0c; padding: 80px 20px;">
-    <h3 style="text-align: center; color: #fff; font-size: 2.5em; text-shadow: 2px 2px #00ffcc; margin-bottom: 40px;">CONTACT US</h3>
-
-    <form id="contact-form" style="max-width: 600px; margin: 0 auto; background: rgba(255, 255, 255, 0.05); padding: 40px; border-radius: 15px; box-shadow: 0 0 20px rgba(0,255,204,0.2);">
-      <label style="color: #00ffcc; font-weight: 600;">Your name:</label>
-      <input type="text" name="name" placeholder="Enter your name" required style="width: 100%; padding: 12px; margin: 10px 0 20px; border: none; border-bottom: 2px solid #00ffcc; background: transparent; color: #fff; font-size: 1em;">
-
-      <label style="color: #00ffcc; font-weight: 600;">Your Email:</label>
-      <input type="email" name="email" placeholder="Enter your email" required style="width: 100%; padding: 12px; margin: 10px 0 20px; border: none; border-bottom: 2px solid #00ffcc; background: transparent; color: #fff; font-size: 1em;">
-
-      <label style="color: #00ffcc; font-weight: 600;">Subject:</label>
-      <input type="text" name="subject" placeholder="Subject" style="width: 100%; padding: 12px; margin: 10px 0 20px; border: none; border-bottom: 2px solid #00ffcc; background: transparent; color: #fff; font-size: 1em;">
-
-      <label style="color: #00ffcc; font-weight: 600;">Your message:</label>
-      <textarea name="message" placeholder="Type your message here..." rows="5" required style="width: 100%; padding: 12px; margin: 10px 0 30px; border: 2px solid #00ffcc; border-radius: 10px; background: transparent; color: #fff; font-size: 1em; resize: vertical;"></textarea>
-
-      <button type="submit" id="send-btn" style="background: linear-gradient(135deg, #00ffcc, #00b894); border: none; padding: 12px 30px; color: #000; font-weight: bold; border-radius: 30px; cursor: pointer; font-size: 1.1em; transition: background 0.3s ease;">Send</button>
-    </form>
+    <h3>What People Are Saying</h3>
+    <blockquote>
+      "OLD CLASHERS is one of the most disciplined teams I've ever worked with. Their strategic approach to Free Fire is second to none."
+      <footer>- John Doe, Esports Coach</footer>
+    </blockquote>
+    <blockquote>
+      "Every time I watch them play, I learn something new. The level of coordination they have is incredible."
+      <footer>- Alex Smith, Fan</footer>
+    </blockquote>
   </section>
 
-  <footer>
-    <p>&copy; 2025 OLD CLASHERS | All Rights Reserved</p>
-    <div class="social-icons">
-      <a href="#" class="fab fa-facebook"></a>
-      <a href="#" class="fab fa-twitter"></a>
-      <a href="#" class="fab fa-instagram"></a>
-    </div>
-  </footer>
+  <section id="blog">
+    <h3>Latest Articles</h3>
+    <ul>
+      <li><a href="#">Understanding Free Fire: A New Era of Mobile Esports</a></li>
+      <li><a href="#">Top Strategies for Winning in Competitive Free Fire</a></li>
+      <li><a href="#">The Journey of OLD CLASHERS: From Dream to Reality</a></li>
+    </ul>
+  </section>
 
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <script>
-    emailjs.init("VYKK057zR_OaMB7bb");
-    const form = document.getElementById("contact-form");
-    form.addEventListener("submit", function(event) {
-      event.preventDefault();
-      emailjs.sendForm('service_0dtr9qv', 'template_srmhwvt', form).then(function() {
-        alert("Message Sent Successfully!");
-        form.reset();
-      }, function(error) {
-        alert("Failed to send message. Please try again.");
-      });
-    });
-  </script>
-</body>
-</html>
+  <section id="contact
